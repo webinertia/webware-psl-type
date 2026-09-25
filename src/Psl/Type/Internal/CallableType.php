@@ -11,7 +11,11 @@ use Psl\Type\Type;
 
 use function is_callable;
 
-/** @extends Type<callable> */
+/**
+ * Type implementation for `callable`.
+ *
+ * @extends Type<callable>
+ */
 final readonly class CallableType extends Type
 {
     #[Override]
