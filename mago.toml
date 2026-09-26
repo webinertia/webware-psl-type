@@ -1,0 +1,6 @@
+extends = "vendor/webware/webware-tools/mago.toml"
+php-version = "8.4.1"
+
+[source]
+paths = ["src", "test"]
+includes = ["vendor"]
