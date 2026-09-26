@@ -3,16 +3,22 @@
     "description": "Custom Types for Psl",
     "type": "library",
     "license": "MIT",
+    "require": {
+        "php": "~8.4.1 || ~8.5.0"
+    },
     "require-dev": {
+        "infection/infection": "^0.35.0",
         "php-standard-library/type": "^6.2",
-        "phpunit/phpunit": "^12.0.0"
+        "phpunit/phpunit": "^13.3.0",
+        "roave/security-advisories": "dev-master",
+        "webware/webware-tools": "^1.0.0-beta.5"
     },
     "autoload": {
         "psr-4": {
             "Psl\\Type\\": "src/Psl/Type/"
         },
         "files": [
-            "src/Psl/bootstrap.php"
+            "src/Psl/Type/callable_type.php"
         ]
     },
     "autoload-dev": {
@@ -27,5 +33,21 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "prefer-stable": true,
+    "scripts": {
+        "test": "phpunit --no-coverage --colors=always --testsuite \"unit test\"",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml --coverage-html coverage/html --coverage-text",
+        "mutation-test": "infection",
+        "test-all": "@test"
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.4.99"
+        },
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "infection/extension-installer": true
+        }
+    }
 }
