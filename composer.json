@@ -18,7 +18,7 @@
             "Psl\\Type\\": "src/Psl/Type/"
         },
         "files": [
-            "src/Psl/Type/callable_type.php"
+            "src/Psl/bootstrap.php"
         ]
     },
     "autoload-dev": {
